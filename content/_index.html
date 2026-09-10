@@ -1,0 +1,231 @@
+---
+title: "St Botolph's, Barwick — the parish church of a small town"
+description: "Parish Eucharist at 10, Choral Evensong at 6, and a church open every day from nine until dusk. Service times, the church year, weddings, baptisms and funerals."
+current: index.html
+---
+<main id="main">
+
+  <section class="welcome">
+    <picture class="welcome__art">
+        <source type="image/avif" srcset="assets/img/welcome.avif">
+        <img src="assets/img/welcome.jpg" data-slot="welcome" width="1200" height="1500" alt="Afternoon light falling across the chairs in the nave of a church" fetchpriority="high">
+      </picture>
+    <div class="welcome__panel">
+      <p class="welcome__eyebrow" data-enter style="--i:0">
+        Church Green, Barwick &middot; <span data-season-label>Ordinary Time</span>
+      </p>
+      <h1 class="welcome__title" data-enter style="--i:1">The parish church<span class="welcome__turn">of a small town</span></h1>
+      <p class="welcome__lede" data-enter style="--i:2">Open every day from nine until dusk, whether or not anything is happening in it. Five services a week, a choir that has sung here since 1871, and a door that is genuinely never locked in daylight.</p>
+      <p data-enter style="--i:3"><a class="btn" href="visit.html">Coming for the first time <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a></p>
+    </div>
+  </section>
+
+  <!-- The kalendar. Every element here is filled by machinery that already
+       existed: applySeason writes [data-season-label], initViz's renderToday
+       writes [data-today-date] and [data-next-service]. -->
+  <div class="kalendar">
+    <div class="court kalendar__inner">
+      <span class="kalendar__season">
+        <span class="kalendar__swatch" aria-hidden="true"></span>
+        <span data-season-label="long">Ordinary Time</span>
+      </span>
+      <span class="kalendar__date" data-today-date>&nbsp;</span>
+      <span class="kalendar__next">Next service — <b data-next-service>see the list</b></span>
+    </div>
+  </div>
+
+
+  <section class="setting" data-reveal>
+    <div class="court">
+      <div class="setting__head"><h2>Three ways in</h2><p>Nobody is asked to sign anything, and nobody is counted.</p></div>
+      <div class="courses">
+        <div class="course">
+          <span class="course__numeral" aria-hidden="true">I</span>
+          <h3 class="course__name">The Parish Eucharist</h3>
+          <p>Ten o'clock on Sunday, sung, about seventy-five minutes. The main service of the week and the one most people mean when they say they came to church.</p>
+          <a class="course__more" href="services.html">All five services <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <div class="course">
+          <span class="course__numeral" aria-hidden="true">II</span>
+          <h3 class="course__name">Choral Evensong</h3>
+          <p>Six in the evening, from the Book of Common Prayer, sung by the choir. Forty-five minutes in which nothing is asked of you at all — a good deal of the congregation comes for exactly that.</p>
+          <a class="course__more" href="music.html">The choir and the organ <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        </div>
+        <div class="course">
+          <span class="course__numeral" aria-hidden="true">III</span>
+          <h3 class="course__name">An empty church</h3>
+          <p>Open nine until dusk, every day. People come in to sit, to light a candle, to get out of the rain, and to look at a building their great-grandparents paid for. That counts.</p>
+          <a class="course__more" href="visit.html">Before you come <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="setting setting--tint setting--bleed" data-reveal>
+    <div class="facing">
+      <picture class="facing__art">
+        <source type="image/avif" srcset="assets/img/vicar.avif">
+        <img src="assets/img/vicar.jpg" data-slot="vicar" width="1000" height="1250" alt="A portrait of the vicar, laughing, holding a book" loading="lazy" decoding="async">
+      </picture>
+      <div class="facing__say">
+        <p class="facing__role">Vicar since 2021</p>
+        <h2 class="facing__name">Alex Odell</h2>
+        <p>I said the office in an empty church for the first eighteen months I was here, and I would still be doing it if nobody had joined in. That is roughly what a parish church is: something kept going on the assumption that it is worth keeping going.</p>
+        <p>Ring the office if you want to talk about anything at all — a wedding, a funeral, a doubt, or the state of the roof.</p>
+        <a class="btn btn--ghost" href="about.html">More about the parish</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⚠ NOT .setting--season, and this is not a missed opportunity.
+       The wheel shows ALL of the liturgical colours at once. Painted on a
+       season-coloured ground, whichever season it currently is vanishes into
+       the background — in Ordinary Time the largest arc of the year simply
+       disappeared. A drawing of every colour needs a neutral ground. The
+       season-painted bands on this site are the ones with no wheel on them. -->
+  <section class="setting setting--tint" data-reveal>
+    <div class="court">
+      <div class="setting__head"><h2>The church keeps a year</h2><p>And so, since you are reading this on it, does this website.</p></div>
+      <div class="year-layout">
+        <div class="year-layout__prose prose">
+          <p>Every parish church changes colour six times a year. The frontal on the altar, the stole the priest wears, the burse and the veil — violet through Advent and Lent, gold at Christmas and Easter, red at Pentecost, green for the long green weeks between.</p>
+          <p>It is the oldest piece of information design the church has, and it is how a congregation knows where it is in the story without being told. This site keeps it: the panel at the top of the front page is whatever colour the church is today.</p>
+          <p style="margin-block-start:var(--s-6)"><a class="btn" href="year.html">Walk through the year</a></p>
+        </div>
+        <div class="viz-host" data-year-wheel></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="setting" data-reveal>
+    <div class="court">
+      <div class="setting__head"><h2>What's coming</h2><p>The services people travel for.</p></div>
+      <div class="occasions">
+        <a class="occasion" href="year.html">
+          <picture>
+        <source type="image/avif" srcset="assets/img/occasion-1.avif">
+        <img src="assets/img/occasion-1.jpg" data-slot="occasion-1" width="800" height="1000" alt="A row of candles burning in the dark" loading="lazy" decoding="async">
+      </picture>
+          <span class="occasion__plate">
+            <span class="occasion__when">Sunday 29 November</span>
+            <span class="occasion__what">Advent Carol Service</span>
+          </span>
+        </a>
+        <a class="occasion" href="music.html">
+          <picture>
+        <source type="image/avif" srcset="assets/img/occasion-2.avif">
+        <img src="assets/img/occasion-2.jpg" data-slot="occasion-2" width="800" height="1000" alt="A choir singing from copies in front of a gilded reredos" loading="lazy" decoding="async">
+      </picture>
+          <span class="occasion__plate">
+            <span class="occasion__when">Sunday 20 December</span>
+            <span class="occasion__what">Nine Lessons and Carols</span>
+          </span>
+        </a>
+        <a class="occasion" href="year.html">
+          <picture>
+        <source type="image/avif" srcset="assets/img/occasion-3.avif">
+        <img src="assets/img/occasion-3.jpg" data-slot="occasion-3" width="800" height="1000" alt="A single candle flame, held, against the dark" loading="lazy" decoding="async">
+      </picture>
+          <span class="occasion__plate">
+            <span class="occasion__when">Saturday 27 March</span>
+            <span class="occasion__what">The Easter Vigil</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="setting setting--tint2" data-reveal>
+    <div class="court">
+      <div class="setting__head"><h2>In their own words</h2></div>
+      <div class="voices">
+        <figure class="voice">
+          <blockquote>&ldquo;I come to Evensong and I leave before the coffee. Eight years now. Nobody has ever once asked me why, which is the reason I keep coming.&rdquo;</blockquote>
+          <figcaption><b>Peter</b> &middot; Sunday evenings</figcaption>
+        </figure>
+        <figure class="voice">
+          <blockquote>&ldquo;We got married here because my grandmother did. I expected a form-filling exercise and got two evenings of proper conversation instead.&rdquo;</blockquote>
+          <figcaption><b>Nita</b> &middot; married here in 2024</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="setting" data-reveal>
+    <div class="court">
+      <div class="setting__head"><h2>The questions people actually ask</h2><p>Usually at the door, usually on the way out.</p></div>
+      <div class="questions">
+        <details class="question">
+          <summary>Do I have to be confirmed, or a member of anything?</summary>
+          <div><p>No. Anyone who would normally receive communion in any church is welcome to receive it here, and anyone who would rather not is welcome to come up for a blessing or stay where they are. Nobody watches.</p></div>
+        </details>
+        <details class="question">
+          <summary>What do people wear?</summary>
+          <div><p>Whatever they arrived in. The 8 o'clock is slightly tweedier than the 10 o'clock and nobody has ever remarked on either.</p></div>
+        </details>
+        <details class="question">
+          <summary>Is the building accessible?</summary>
+          <div><p>Step-free through the south porch, an accessible WC in the north aisle, a hearing loop throughout and large-print books at the back. The tower and the gallery are not accessible and cannot be made so. Ring ahead and anything else can be arranged.</p></div>
+        </details>
+        <details class="question">
+          <summary>What happens with children?</summary>
+          <div><p>They are welcome in everything and nobody minds noise in a building this size. Sunday school meets during the 10 o'clock in the church hall and comes back for communion. Everyone working with children is DBS-checked and our safeguarding policy is on the about page.</p></div>
+        </details>
+        <details class="question">
+          <summary>Will I be asked for money?</summary>
+          <div><p>A plate is passed during one hymn. Visitors are asked not to give — you are a guest, and the building has stood for six hundred years without your contribution.</p></div>
+        </details>
+        <details class="question">
+          <summary>I am not sure I believe any of it.</summary>
+          <div><p>That is a normal condition of being in a church, including for some of the people at the front. Nothing here requires you to declare a position.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="setting setting--tint" data-reveal>
+    <div class="court">
+      <div class="setting__head"><h2>Write to the parish office</h2><p>A person reads it, usually the same day.</p></div>
+      <div class="invitation__grid">
+        <div class="invitation__aside">
+          <p>The parish office is open Tuesday to Friday mornings and the phone is answered by a person. For a death, ring any time — it diverts out of hours.</p>
+          <dl>
+            <dt>Telephone</dt><dd><a href="#" data-church-href="@tel" data-church="phone">&nbsp;</a></dd>
+            <dt>Email</dt><dd><a href="#" data-church-href="@email" data-church="email">&nbsp;</a></dd>
+            <dt>In person</dt><dd data-church="@address">&nbsp;</dd>
+          </dl>
+        </div>
+        <form class="invitation__form" method="post" action="#">
+          <div class="form-grid">
+            <div>
+              <label for="f-name">Your name <span class="req">(required)</span></label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="f-email">Email <span class="req">(required)</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="form-field--full">
+              <label for="f-about">What is it about?</label>
+              <select id="f-about" name="about">
+                <option>Coming to a service</option>
+                <option>A wedding</option>
+                <option>A baptism or thanksgiving</option>
+                <option>A funeral</option>
+                <option>Joining the choir</option>
+                <option>The building, or its history</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="form-field--full">
+              <label for="f-msg">Message</label>
+              <textarea id="f-msg" name="message"></textarea>
+            </div>
+          </div>
+          <p style="margin-block-start:var(--s-5)"><button class="btn" type="submit">Send <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg></button></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>

@@ -1,0 +1,18 @@
+baseURL = '/'
+locale = 'en-GB'
+title = "St Botolph's, Barwick"
+
+# The runtime in static/core/js/ resolves the current nav link and the config
+# file from a flat .html path, so keep Hugo's URLs flat too.
+uglyURLs = true
+
+# Hugo adds its own <meta name="generator"> to the home page unless told not to.
+disableHugoGeneratorInject = true
+
+[security]
+  # The pages are HTML, not Markdown. Hugo has excluded text/html content from
+  # the default policy since 0.150, so a theme built from HTML must say so.
+  allowContent = ['^text/html$', '^text/markdown$']
+
+[markup.goldmark.renderer]
+  unsafe = true

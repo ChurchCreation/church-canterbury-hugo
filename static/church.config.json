@@ -1,0 +1,97 @@
+{
+  "name": "St Botolph's, Barwick",
+  "shortName": "St Botolph's",
+  "tagline": "The parish church of Barwick, keeping the daily office since 1348",
+  "denomination": "Church of England",
+  "denominationUri": "https://www.wikidata.org/wiki/Q82708",
+  "locale": "en-GB",
+  "timezone": "Europe/London",
+  "use24HourClock": false,
+
+  "_liturgical_note": "This is the wedge. liturgy.js resolves the season before first paint and writes <html data-season>, liturgy.css maps it to --accent, and families/parish.css paints the hero panel in it. Set adventUse to 'sarum' for Sarum blue, lentUse to 'array' for the unbleached Lenten array — both are legitimate English use and the parish chooses, not us.",
+  "liturgical": {
+    "enabled": true,
+    "use": { "advent": "violet", "lent": "violet" }
+  },
+
+  "address": {
+    "street": "Church Green",
+    "city": "Barwick",
+    "region": "Somerset",
+    "postal": "BA22 9TD",
+    "country": "GB"
+  },
+  "geo": { "lat": 50.9224, "lng": -2.6188 },
+
+  "phone": "01632 960274",
+  "email": "parishoffice@example.org",
+
+  "services": [
+    {
+      "day": "Sunday",
+      "time": "08:00",
+      "label": "Holy Communion",
+      "note": "Book of Common Prayer, said, no music",
+      "durationMinutes": 40
+    },
+    {
+      "day": "Sunday",
+      "time": "10:00",
+      "label": "Parish Eucharist",
+      "note": "Sung, with the choir and Sunday school",
+      "durationMinutes": 75
+    },
+    {
+      "day": "Sunday",
+      "time": "18:00",
+      "label": "Choral Evensong",
+      "note": "Book of Common Prayer, sung by the choir",
+      "durationMinutes": 55
+    },
+    {
+      "day": "Wednesday",
+      "time": "10:30",
+      "label": "Midweek Eucharist",
+      "note": "In the Lady Chapel, followed by coffee",
+      "durationMinutes": 40
+    },
+    {
+      "day": "Thursday",
+      "time": "17:30",
+      "label": "Evening Prayer",
+      "note": "Said. Anyone may come; most weeks it is three of us",
+      "durationMinutes": 25
+    }
+  ],
+
+  "events": [
+    {
+      "name": "Advent Carol Service",
+      "start": "2026-11-29T18:00:00Z",
+      "end": "2026-11-29T19:15:00Z",
+      "description": "The church in darkness, lit by candles carried in procession. Sung by the parish choir. No ticket and no collection.",
+      "price": "0",
+      "currency": "GBP"
+    },
+    {
+      "name": "Nine Lessons and Carols",
+      "start": "2026-12-20T18:00:00Z",
+      "end": "2026-12-20T19:30:00Z",
+      "description": "The whole town's carol service, followed by mulled wine in the church hall.",
+      "price": "0",
+      "currency": "GBP"
+    },
+    {
+      "name": "The Easter Vigil",
+      "start": "2027-03-27T20:00:00Z",
+      "end": "2027-03-27T21:45:00Z",
+      "description": "The new fire kindled in the churchyard, the paschal candle carried in, and the first Eucharist of Easter.",
+      "price": "0",
+      "currency": "GBP"
+    }
+  ],
+
+  "giving": { "provider": "", "url": "https://example.org/give", "embed": "" },
+  "livestream": { "channelUrl": "", "archiveUrl": "", "liveEmbed": "" },
+  "socials": []
+}

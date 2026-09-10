@@ -1,0 +1,37 @@
+[
+  {
+    "href": "visit.html",
+    "attrs": "",
+    "label": "Plan a visit"
+  },
+  {
+    "href": "services.html",
+    "attrs": "",
+    "label": "Services"
+  },
+  {
+    "href": "year.html",
+    "attrs": "",
+    "label": "The church year"
+  },
+  {
+    "href": "music.html",
+    "attrs": "",
+    "label": "Music"
+  },
+  {
+    "href": "life.html",
+    "attrs": "",
+    "label": "Weddings & baptisms"
+  },
+  {
+    "href": "about.html",
+    "attrs": "",
+    "label": "About"
+  },
+  {
+    "href": "contact.html",
+    "attrs": "",
+    "label": "Contact"
+  }
+]

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Title }}</title>
+<meta name="description" content="{{ .Params.description }}">
+
+<link rel="preload" href="./core/fonts/cormorantgaramond-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./core/css/fonts.css">
+<link rel="stylesheet" href="./core/css/tokens.css">
+<link rel="stylesheet" href="./core/css/_chrome-editorial.css">
+<link rel="stylesheet" href="./core/css/parish.css">
+<link rel="stylesheet" href="./core/css/base.css">
+<link rel="stylesheet" href="./core/css/components.css">
+<link rel="stylesheet" href="./core/css/motion.css">
+<link rel="stylesheet" href="./core/css/liturgy.css">
+<link rel="stylesheet" href="./core/css/viz.css">
+<link rel="stylesheet" href="assets/template.css">
+
+<!-- Resolve the season BEFORE first paint, or the hero panel flashes Ordinary
+     Time green on the way to Advent violet. -->
+<script type="module">
+  import { season } from './core/js/liturgy.js';
+  document.documentElement.dataset.season = season().id;
+  const t = localStorage.getItem('theme');
+  if (t) document.documentElement.dataset.theme = t;
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+  <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M3 12h16M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M6 18L18 6M8 6h10v10"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M4 9l8 7 8-7"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4L11 13M18 14v6H4V6h6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3.5L11 7.5 8.6 9.2a12.5 12.5 0 0 0 6.2 6.2L16.5 13l4.5 1.5V18a2.5 2.5 0 0 1-2.5 2.5A15.5 15.5 0 0 1 3.5 5.5 2.5 2.5 0 0 1 6 3Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 6.5L21 6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6.5V12l4 2.5"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 6h16v15H4zM4 10.5h16M8.5 3v4M15.5 3v4"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V3h10v5M4 8h16v8h-3M7 16H4M7 13h10v8H7z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8Z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M3 21h18"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><path d="M2.5 7h19v10h-19z"/><circle cx="12" cy="12" r="2.6"/><path d="M5.5 7v10M18.5 7v10"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6v15M12 6a5 5 0 0 0-5-3H3v15h4a5 5 0 0 1 5 3 5 5 0 0 1 5-3h4V3h-4a5 5 0 0 0-5 3Z"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 17V4l11-2v13"/><ellipse cx="6" cy="17.5" rx="3" ry="2.5"/><ellipse cx="17" cy="15.5" rx="3" ry="2.5"/></symbol>
+</svg>
+
+<header class="porch">
+  <div class="court">
+    <a class="porch__mark" href="index.html" data-church="shortName">St Botolph's</a>
+    <div class="porch__tools">
+      <button class="theme-toggle" type="button" aria-label="Switch theme"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-contrast"/></svg></button>
+    </div>
+  </div>
+  <nav class="porch__ways" aria-label="Primary">
+    <div class="court">
+      <button class="porch-toggle" type="button" aria-expanded="false">
+        <svg class="icon icon--menu" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg><svg class="icon icon--close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+        <span data-porch-label>Menu</span>
+      </button>
+      <ul>
+        {{- range .Site.Data.nav }}
+        <li><a href="{{ .href }}"{{ if eq .href $.Params.current }} aria-current="page"{{ end }}>{{ .label | safeHTML }}</a></li>
+        {{- end }}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+{{ block "main" . }}{{ end }}
+
+<footer class="valediction">
+  <div class="court">
+    <a class="valediction__mark" href="index.html" data-church="name">St Botolph's, Barwick</a>
+    <div class="valediction__grid">
+      <div>
+        <h2>Find us</h2>
+        <p data-church="@address">&nbsp;</p>
+        <p style="margin-block-start:var(--s-3)">
+          <a class="with-icon" href="#" data-church-href="@maps"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><span>Directions and parking</span></a>
+        </p>
+      </div>
+      <div>
+        <h2>Parish office</h2>
+        <ul>
+          <li><a class="with-icon" href="#" data-church-href="@tel"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg><span data-church="phone">&nbsp;</span></a></li>
+          <li><a class="with-icon" href="#" data-church-href="@email"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg><span data-church="email">&nbsp;</span></a></li>
+          <li>Tuesday to Friday, 9.30 to 12.30</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Start here</h2>
+        <ul>
+          <li><a href="visit.html">Plan a visit</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="year.html">The church year</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="life.html">Weddings & baptisms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Giving</h2>
+        <p style="font-size:var(--t-sm);color:var(--muted-invert)">The building costs about £190 a day to keep open. Nothing here depends on your giving.</p>
+        <p style="margin-block-start:var(--s-4)"><a class="btn" href="#" data-church-href="giving.url">Give</a></p>
+      </div>
+    </div>
+    <p class="valediction__note">
+      <span>&copy; <span data-church="@year">2026</span> <span data-church="name">&nbsp;</span> &middot; PCC registered charity 1130000</span>
+      <span>Canterbury — a free template from <a href="https://churchcreation.com/templates/canterbury/">ChurchCreation</a></span>
+    </p>
+  </div>
+</footer>
+
+<script type="module">
+  import { loadConfig, hydrate } from './core/js/config.js';
+  import { applySeason } from './core/js/liturgy.js';
+  import { injectSchema } from './core/js/schema.js';
+  import { initTheme, initCurrentPage, initPorch } from './core/js/ui.js';
+  import { initViz } from './core/js/viz.js';
+  import { initReveal } from './core/js/reveal.js';
+
+  const config = await loadConfig();
+  hydrate(config);
+  if (config.liturgical?.enabled) applySeason(config);
+  injectSchema(config);
+  initTheme();
+  initCurrentPage('.porch__ways a');
+  initPorch();
+  initViz(config);
+  initReveal();
+</script>
+</body>
+</html>
