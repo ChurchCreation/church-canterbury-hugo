@@ -4,7 +4,7 @@ licenselink = "https://github.com/ChurchCreation/church-canterbury-hugo/blob/mai
 description = "A free website template for Anglican, Episcopal and Catholic parishes. It knows the church year: the season is computed from the date and colours the page, and the movable feasts are worked out rather than typed in, so the calendar is never out of date. Pages for services, music, the church year, and weddings, baptisms and funerals. Self-hosted typefaces, dark mode, and no external requests."
 homepage = "https://github.com/ChurchCreation/church-canterbury-hugo"
 demosite = "https://churchcreation.com/demo/canterbury/"
-tags = ["church", "nonprofit", "responsive", "dark-mode", "accessibility"]
+tags = ["church","dark mode","light mode","hero","contact"]
 features = ["responsive", "dark mode", "self-hosted fonts", "no external requests", "structured data"]
 
 [author]
