@@ -43,24 +43,24 @@ The rest:
 | Where | What |
 |---|---|
 | `layouts/baseof.html` | the shared layout — header, footer, `<head>` |
-| `content/*.html` | one file per page; the front matter carries its title and description |
+| `exampleSite/content/*.html` | one file per page; the front matter carries its title and description |
 | `data/nav.json` | the navigation, rendered by the layout with `aria-current` on the current page |
 
 ## What's included
 
-8 pages: St Botolph's, Barwick, About, Contact, Weddings, baptisms and funerals, Music, Services, Plan a visit, The church year.
+8 pages: Home, About, Contact, Weddings, baptisms and funerals, Music, Services, Plan a visit, The church year.
 
 Self-contained: the typefaces are bundled and self-hosted, the CSS and JS ship with the template, and there are no external requests, no build step for the assets, and no tracking. Dark mode is included and respects the system setting.
 
 ## URLs are flat on purpose
 
-Pages build to `about.html` rather than `/about/`. The template's own runtime depends on it: `core/js/ui.js` marks the current nav link by comparing the last path segment, and `core/js/config.js` fetches `church.config.json` by a relative path. Pretty URLs break both. If you would rather have them, change the two accordingly.
+Pages build to `about.html` rather than `/about/`. The template's own runtime depends on it: `static/core/js/ui.js` marks the current nav link by comparing the last path segment, and `static/core/js/config.js` fetches `static/church.config.json` by a relative path. Pretty URLs break both. If you would rather have them, change the two accordingly.
 
 ## Licence
 
-MIT — see [LICENSE.md](LICENSE.md). Use it for your church, for a client, commercially, whatever. Attribution appreciated, not required. Bundled typefaces are SIL OFL 1.1; see `core/fonts/FONTS.md`.
+MIT — see [LICENSE.md](LICENSE.md). Use it for your church, for a client, commercially, whatever. Attribution appreciated, not required. Bundled typefaces are SIL OFL 1.1; see `static/core/fonts/FONTS.md`.
 
-Photography in the live demo is from Unsplash and is credited in `CREDITS.md`; the download ships neutral placeholders instead.
+The photographs are from [Unsplash](https://unsplash.com/) under the [Unsplash Licence](https://unsplash.com/license), which permits free use, modification and distribution, including commercially. Every photographer is credited in `static/CREDITS.md`. Replace them with pictures of your own church when you have them.
 
 ---
 
