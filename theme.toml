@@ -1,0 +1,13 @@
+name = "Canterbury"
+license = "MIT"
+licenselink = "https://github.com/ChurchCreation/church-canterbury-hugo/blob/main/LICENSE"
+description = "Parish Eucharist at 10, Choral Evensong at 6, and a church open every day from nine until dusk. Service times, the church year, weddings, baptisms and funerals."
+homepage = "https://churchcreation.com/templates/canterbury/"
+demosite = "https://churchcreation.com/demo/canterbury/"
+tags = ["church", "nonprofit", "responsive", "dark mode", "accessibility"]
+features = ["responsive", "dark mode", "self-hosted fonts", "no external requests", "structured data"]
+min_version = "0.150.0"
+
+[author]
+  name = "ChurchCreation"
+  homepage = "https://churchcreation.com/"

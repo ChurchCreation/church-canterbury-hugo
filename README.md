@@ -9,13 +9,23 @@ Parish Eucharist at 10, Choral Evensong at 6, and a church open every day from n
 Needs Hugo 0.150+ (extended not required).
 
 ```bash
-hugo server
+git submodule add https://github.com/ChurchCreation/church-canterbury-hugo.git themes/church-canterbury-hugo
 ```
 
-Then build:
+Then set the theme in your site's configuration:
+
+```toml
+theme = 'church-canterbury-hugo'
+uglyURLs = true          # the runtime resolves paths from a flat .html URL
+
+[security]
+  allowContent = ['^text/html$', '^text/markdown$']
+```
+
+To see it with this parish's pages, run the bundled example site:
 
 ```bash
-hugo          # writes public/
+cd exampleSite && hugo server --themesDir ../..
 ```
 
 ## Making it your church's

@@ -1,12 +1,12 @@
-baseURL = '/'
+baseURL = 'https://example.com/'
 locale = 'en-GB'
 title = "St Botolph's, Barwick"
+theme = 'church-canterbury-hugo'
 
 # The runtime in static/core/js/ resolves the current nav link and the config
 # file from a flat .html path, so keep Hugo's URLs flat too.
 uglyURLs = true
 
-# Hugo adds its own <meta name="generator"> to the home page unless told not to.
 disableHugoGeneratorInject = true
 
 [security]

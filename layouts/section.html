@@ -1,12 +1,13 @@
 {{ define "main" }}
-{{- if .Params.current -}}
-{{ .Content }}
-{{- else -}}
 <main class="site-main" id="main">
   <div class="court">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
+    <ul>
+      {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
   </div>
 </main>
-{{- end }}
 {{ end }}
